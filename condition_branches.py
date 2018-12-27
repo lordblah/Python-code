@@ -1,19 +1,21 @@
+#import library
 from sys import exit
 
+#calls gold room function
 def gold_room():
     print "This room is full of gols. How much do you take?"
-
+    #input from user
     next = raw_input("> ")
     if "0" in next or "1" in next:
         how_much = int(next)
-    else:
+    else:#if user inputs invaild command, then the game ends
         dead("Man,learn to type a number.")
     if how_much < 50:
         print "Nice, you're not greedy, you win"
         exit(0)
     else:
         dead("yo greedy bastard!")
-
+#calls bear room function
 def bear_room():
     print "These is a bear here."
     print "THe bear has a bunch of honey."
@@ -22,6 +24,7 @@ def bear_room():
     bear_moved = False
 
     while True:
+        #input
         next = raw_input("> ")
 
         if next == "take honey":
@@ -36,7 +39,7 @@ def bear_room():
         else:
             print "I got no idea what that means"
 
-
+#calls cthulhu function
 def cthulhu_room():
     print "Here you see the great evil cthulhu."
     print "He, it, whatever stares at you and you go insane"
@@ -50,10 +53,12 @@ def cthulhu_room():
     else:
         cthulhu_room()
 
+#ends program
 def dead(why):
     print why, "Good job!"
     exit(0)
 
+#calls start function 
 def start():
     print "you are in a dark room."
     print "There is a door to your right and left."
@@ -67,6 +72,6 @@ def start():
         cthulhu_room()
     else:
         dead("you stuble around the room until you starve")
-
+#calls start function, could be though of as main function
 start()
 
