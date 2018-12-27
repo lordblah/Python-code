@@ -73,3 +73,6 @@ crouse = Salmon()
 #harry is a Halibut
 harry = Halibut()
 
+#output pet names
+print(mary.pet.name)
+print(frank.pet.name)
